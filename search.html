@@ -6,6 +6,29 @@
         
     <link rel="stylesheet" href="./style.css">
     <script src="./main.js"></script>
+    <script src="./js/BusanSafeRestaurantService.js"></script>
+    <script>
+        var jsonItems;
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener('readystatechange', ajaxHandler);
+
+        function drawCard(){
+        }
+
+        function ajaxHandler(){
+            if(xhr.readyState === 4 && xhr.status === 200){
+                jsonItems = parseBSRSJSON(xhr.responseText);
+
+            }
+        }
+
+        function init(){
+            xhr.open('GET', 'BusanSafeRestaurantList.json', true);
+            xhr.send();    
+        }
+
+        window.addEventListener('load', init);
+    </script>
     </head>
 
     <body>
