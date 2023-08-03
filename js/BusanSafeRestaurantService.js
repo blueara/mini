@@ -1,19 +1,14 @@
-var xhr = new XMLHttpRequest();
-var jsonItems;
-xhr.addEventListener('readystatechange', ajaxHandler);
-
-function ajaxHandler(){
-    if(xhr.readyState === 4 && xhr.status === 200){
-        jsonItems = parseBSRSJSON(xhr.responseText);
-        console.log(jsonItems);
-    }
-}
-
 function parseBSRSJSON(json){
     let items = JSON.parse(json);
-    items = getItems(items.response.body.items.item);
+    items = getItems(items.getSafeRestaurantList.body.items.item);
 
     return items;
+}
+
+function getItem(item){
+    {
+        
+    }
 }
 
 function getItems(items){
