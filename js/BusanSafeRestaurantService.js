@@ -5,42 +5,47 @@ function parseBSRSJSON(json){
     return items;
 }
 
-function getItem(item){
-    {
-        
+function getItem(jsonItem){
+    function getGeo(geom){
+        let result = null;
+
+        if(geom.length !== 0){
+            result = geom.slice(6, -1).split(' ');
+        }
+    
+        return result;
     }
+
+    let item = {
+        addr: jsonItem.addrs,
+        name: jsonItem.biz_nm,
+        tel: jsonItem.biz_tel,
+        geo: getGeo(jsonItem.geom)
+    }
+
+    return item;
 }
 
-function getItems(items){
+function getItems(jsonItems){
+    for(let i in jsonItems){
+        jsonItems[i] = getItem(jsonItems[i]);
+    }
 
-    itemList = {
-        items : items,
-        
-        // 필요없는 부분. item개별 기능으로 들어가고 없애야함.. 
-        getAddr : function (item){
-            return item.addrs;
-        },
-        getBizNm : function (item){
-            return item.biz_nm;
-        },
-        getBizTel : function(item){
-            return item.biz_tel;
-        },
-        getGeo : function(item){
-
-        },
+    let itemList = {
+        items : jsonItems,
 
         //text 문자열을 포함하는 주소값을 가진 items 객체의 배열을 반환.
         searchAddr : function(text){
             let result = new Array();
             for(let i in this.items){
-                if(this.getAddr(this.items[i]).includes(text)){
-                    console.log(this.getAddr(this.items[i]));
+                if(this.items[i].addr.includes(text)){
+                    console.log(this.items[i].addr);
                     result.push(this.items[i]);
                 }
             }
             return result;
         }
+
     }
     return itemList;
 }
