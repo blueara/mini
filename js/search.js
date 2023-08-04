@@ -8,11 +8,15 @@ function parseBSRSJSON(json){
     return items;
 }
 
+//아이템 객체 정리하여 반환
 function getItem(jsonItem){
+    
     function getGeo(geom){
         let result = null;
 
+        // 위도, 경도값이 있는 경우 반환
         if(geom.length !== 0){
+            // POINT(129.166793254093 35.1610844272274)
             result = geom.slice(6, -1).split(' ');
         }
 
@@ -29,7 +33,9 @@ function getItem(jsonItem){
     return item;
 }
 
+//아이템 객체의 배열을 반환
 function getItems(jsonItems){
+
     for(let i in jsonItems){
         jsonItems[i] = getItem(jsonItems[i]);
     }
@@ -47,6 +53,7 @@ function getItems(jsonItems){
             }
             return result;
         },
+        //주소, 점포명 통합검색
         searchItems : function(query){
             let result = new Array();
             for(let i in this.items){
@@ -84,6 +91,7 @@ function createSearchList(jsonItems, query){
         searchResult.appendChild(tel);
         searchResult.appendChild(addr);
 
+        //위도, 경도가 있을시 사용자 속성 정의
         if(items[i].geo){
             searchResult.setAttribute('data-lat', items[i].geo[1]);
             searchResult.setAttribute('data-lng', items[i].geo[0]);
@@ -105,6 +113,7 @@ function searchListClickHandler(event){
         url += encodeURIComponent(event.target.parentNode.querySelector('.jsonAddr').innerHTML);
     }
 
+    //좌표값이 있다면 파라미터에 더함
     if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
         url += '?lat=' + event.target.getAttribute('data-lat');
         url += '&lng=' + event.target.getAttribute('data-lng');
