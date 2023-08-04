@@ -3,32 +3,31 @@
     <head>
         <title> </title>
         <meta charset="UTF-8" />
-        
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js"></script>
-    <script src="./js/BusanSafeRestaurantService.js"></script>
-    <script>
-        var jsonItems;
-        var xhr = new XMLHttpRequest();
-        xhr.addEventListener('readystatechange', ajaxHandler);
+        <link rel="stylesheet" href="./style.css">
+        <script src="./main.js"></script>
+        <script src="./js/BusanSafeRestaurantService.js"></script>
+        <script>
+            var jsonItems;
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener('readystatechange', ajaxHandler);
 
-        function drawCard(){
-        }
-
-        function ajaxHandler(){
-            if(xhr.readyState === 4 && xhr.status === 200){
-                jsonItems = parseBSRSJSON(xhr.responseText);
-
+            function drawCard(){
             }
-        }
 
-        function init(){
-            xhr.open('GET', 'BusanSafeRestaurantList.json', true);
-            xhr.send();    
-        }
+            function ajaxHandler(){
+                if(xhr.readyState === 4 && xhr.status === 200){
+                    jsonItems = parseBSRSJSON(xhr.responseText);
 
-        window.addEventListener('load', init);
-    </script>
+                }
+            }
+
+            function init(){
+                xhr.open('GET', 'BusanSafeRestaurantList.json', true);
+                xhr.send();    
+            }
+
+            window.addEventListener('load', init);
+        </script>
     </head>
 
     <body>
@@ -53,9 +52,6 @@
             <p id="jsonAddr">주소 addrs 삽입</p>
         </div>
 
- 
-        
-        
     </body>
 </html>
 
