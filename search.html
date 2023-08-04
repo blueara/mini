@@ -5,52 +5,22 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
-        <script src="./main.js"></script>
-        <script src="./js/BusanSafeRestaurantService.js"></script>
+        
+        <script src="./js/search.js"></script>
         <script>
             var xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', ajaxHandler);
-
-            function drawCard(jsonItems, query){
-                let searchList = jsonItems.searchAddr(query);
-                
-                for(let i in searchList){
-                    let searchResult = document.createElement('div');
-                    let name = document.createElement('h5');
-                    let tel = document.createElement('p');
-                    let addr = document.createElement('p');
-
-                    searchResult.setAttribute('class', 'searchResult');
-                    name.setAttribute('class', 'jsonName');
-                    tel.setAttribute('class', 'jsonTel');
-                    addr.setAttribute('class', 'jsonAddr');
-
-                    name.innerHTML = searchList[i].name;
-                    tel.innerHTML = searchList[i].tel;
-                    addr.innerHTML = searchList[i].addr;
-
-                    searchResult.setAttribute('key', i);
-                    searchResult.appendChild(name);
-                    searchResult.appendChild(tel);
-                    searchResult.appendChild(addr);
-
-                    if(searchList[i].geo){
-                        searchResult.setAttribute('data-lat', searchList[i].geo[1]);
-                        searchResult.setAttribute('data-lng', searchList[i].geo[0]);
-                    }
-
-                    searchList[i] = searchResult;
-                    console.log(searchList[i]);
-                }
-            }
 
             function ajaxHandler(){
                 if(xhr.readyState === 4 && xhr.status === 200){
                     const query = new URL(location.href).searchParams.get('query');
                     const jsonItems = parseBSRSJSON(xhr.responseText);
+                    let searchList = document.querySelector('.searchList');
                     
                     if(query !== null){
-                        drawCard(jsonItems, query);
+                        createSearchList(jsonItems, query).forEach(element => {
+                            searchList.appendChild(element);
+                        });
                     }
                 }
             }
@@ -84,40 +54,14 @@
         </header>
 
         <div class="searchList">
-            <div class="searchResult">
-                <span id="jsonName">여기에 biz_nm 삽입</span>
-                <span id="jsonTel">전화 biz_tel 삽입</sp>
-                <span id="jsonAddr">주소 addrs 삽입</span>
-            </div>
-            <div class="searchResult">
-                <span id="jsonName">여기에 biz_nm 삽입</span>
-                <span id="jsonTel">전화 biz_tel 삽입</sp>
-                <span id="jsonAddr">주소 addrs 삽입</span>
-            </div>
-            <div class="searchResult">
-                <span id="jsonName">여기에 biz_nm 삽입</span>
-                <span id="jsonTel">전화 biz_tel 삽입</sp>
-                <span id="jsonAddr">주소 addrs 삽입</span>
-            </div>
-            <div class="searchResult">
-                <span id="jsonName">여기에 biz_nm 삽입</span>
-                <span id="jsonTel">전화 biz_tel 삽입</sp>
-                <span id="jsonAddr">주소 addrs 삽입</span>
-            </div>
-            <div class="searchResult">
-                <span id="jsonName">여기에 biz_nm 삽입</span>
-                <span id="jsonTel">전화 biz_tel 삽입</sp>
-                <span id="jsonAddr">주소 addrs 삽입</span>
-            </div>
         </div>
-        <!-- 이름    주소            TEL
-
-        어스시 부산시 해운대 ~~~  010
-        어스시 부산시 해운대 ~~~  010
-        어스시 부산시 해운대 ~~~  010
-        어스시 부산시 해운대 ~~~  010
-        어스시 부산시 해운대 ~~~  010
-        어스시 부산시 해운대 ~~~  010 -->
+        <!-- 
+            <div class="searchResult">
+                <span id="jsonName">여기에 biz_nm 삽입</span>
+                <span id="jsonTel">전화 biz_tel 삽입</sp>
+                <span id="jsonAddr">주소 addrs 삽입</span>
+            </div>
+        -->
     </body>
 </html>
 

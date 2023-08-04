@@ -48,3 +48,37 @@ function getItems(jsonItems){
     }
     return itemList;
 }
+
+function createSearchList(jsonItems, query){
+    let items = jsonItems.searchAddr(query);
+    
+    for(let i in items){
+        let searchResult = document.createElement('div');
+        let name = document.createElement('span');
+        let tel = document.createElement('span');
+        let addr = document.createElement('span');
+
+        searchResult.setAttribute('class', 'searchResult');
+        name.setAttribute('class', 'jsonName');
+        tel.setAttribute('class', 'jsonTel');
+        addr.setAttribute('class', 'jsonAddr');
+
+        name.innerHTML = items[i].name;
+        tel.innerHTML = items[i].tel;
+        addr.innerHTML = items[i].addr;
+
+        searchResult.setAttribute('key', i);
+        searchResult.appendChild(name);
+        searchResult.appendChild(tel);
+        searchResult.appendChild(addr);
+
+        if(items[i].geo){
+            searchResult.setAttribute('data-lat', items[i].geo[1]);
+            searchResult.setAttribute('data-lng', items[i].geo[0]);
+        }
+
+        items[i] = searchResult;
+    }
+
+    return items;
+}
