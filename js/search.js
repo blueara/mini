@@ -35,10 +35,19 @@ function getItems(jsonItems){
         items : jsonItems,
 
         //text 문자열을 포함하는 주소값을 가진 items 객체의 배열을 반환.
-        searchAddr : function(text){
+        searchAddr : function(query){
             let result = new Array();
             for(let i in this.items){
-                if(this.items[i].addr.includes(text)){
+                if(this.items[i].addr.includes(query)){
+                    result.push(this.items[i]);
+                }
+            }
+            return result;
+        },
+        searchItems : function(query){
+            let result = new Array();
+            for(let i in this.items){
+                if(this.items[i].addr.includes(query) || this.items[i].name.includes(query)){
                     result.push(this.items[i]);
                 }
             }
@@ -50,7 +59,7 @@ function getItems(jsonItems){
 }
 
 function createSearchList(jsonItems, query){
-    let items = jsonItems.searchAddr(query);
+    let items = jsonItems.searchItems(query);
     
     for(let i in items){
         let searchResult = document.createElement('div');
