@@ -39,7 +39,6 @@ function getItems(jsonItems){
             let result = new Array();
             for(let i in this.items){
                 if(this.items[i].addr.includes(text)){
-                    console.log(this.items[i].addr);
                     result.push(this.items[i]);
                 }
             }
