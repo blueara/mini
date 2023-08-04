@@ -38,16 +38,18 @@ header {
     /* line-height: 300px; */
     float: left; 
     /* margin-bottom: 100px; */
+    padding-top: 20px;
 
 }
 .spanTitle {
     width: 20%;
     float: left;
+    color: white;
+    padding-left: 20px;
 }
 .anchor {
     width: 20%;
     float: right;
-    
 }
 .highlight{
     font-size: 2em;
@@ -69,9 +71,10 @@ header {
     width: 80%;
     height: 80%;
     font-size: 40px;
+
     /* padding: 10px; */
     border-radius: 60px; 
-    /* line-height: 120px; */
+    /* line-height: 80%; */
     /* padding-left: 40px; */
 }
 
@@ -103,14 +106,12 @@ header {
     margin: 0 auto;
     margin-bottom: 20px;
     background: url(./img/busanSea.jpg);
-    /* background-color: black; */
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: black;
     text-align: center;
     font-size: 1.5em;
-    /* opacity: 0.5; */
-    /* filter: brightness(80%); */
+   
 
 }
 .row2{
@@ -151,6 +152,8 @@ header {
 
 .searchList {
     width: 80%;
+    height: 40px;
+    line-height: 40px;
     border: 1px solid #1b47b3;
     margin-left: auto;
     margin-right: auto;
@@ -158,4 +161,52 @@ header {
 .searchResult {
     border-bottom: 1px solid #1b47b3;
 
+}
+
+.team_card{
+    width: 300px;
+    padding: 10px;
+    height: 500px;
+    float: left;
+    border: 2px solid #1b47b3;
+    /* border-radius: 5%; */
+   
+    margin: 60px 30px;
+
+  }
+
+.row6 {
+    /* background: #e9ecef; */
+    width : 100%;
+    height: 600px;
+    border: 0px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
+}
+.row6Container {
+    width : 1100px;
+    /* border: 1px solid #ccc; */
+    padding-top: 20px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.row6Container h3 {
+    text-align: center;
+
+}
+.row6Container p {
+    font-size: 20px;
+}
+.bi-search {
+    font-size: 20px;
+}
+.team_card img {
+    width: 100%;
+    height: 250px;
+}
+.team_card i {
+    font-size: 40px;
 }
