@@ -113,6 +113,15 @@ header {
     /* filter: brightness(80%); */
 
 }
+.row2{
+    background: #e9ecef;
+    width : 80%;
+    height: 600px;
+    padding-top: 120px;
+    border: 0px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
 .anchor {
     color: white;
     text-align: right;
