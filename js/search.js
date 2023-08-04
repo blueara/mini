@@ -72,10 +72,10 @@ function createSearchList(jsonItems, query){
     let items = jsonItems.searchItems(query);
     
     for(let i in items){
-        let searchResult = document.createElement('div');
-        let name = document.createElement('span');
-        let tel = document.createElement('span');
-        let addr = document.createElement('span');
+        let searchResult = document.createElement('tr');
+        let name = document.createElement('td');
+        let tel = document.createElement('td');
+        let addr = document.createElement('td');
 
         searchResult.setAttribute('class', 'searchResult');
         name.setAttribute('class', 'jsonName');
@@ -127,11 +127,28 @@ function ajaxHandler(){
         const query = new URL(location.href).searchParams.get('query');
         const jsonItems = parseBSRSJSON(xhr.responseText);
         let searchList = document.querySelector('.searchList');
+        let table = document.createElement('table');
+        let tr = document.createElement('tr');
+
+        for(let i = 0; i < 3; i++){
+            tr.appendChild(document.createElement('th')); 
+        }
         
+        tr.children[0].innerHTML = '이름';
+        tr.children[1].innerHTML = 'TEL';
+        tr.children[2].innerHTML = '주소';
+
+        table.appendChild(document.createElement('thead'));
+        table.firstChild.appendChild(tr);
+
         if(query !== null){
+            let tbody = document.createElement('tbody');
             createSearchList(jsonItems, query).forEach(element => {
-                searchList.appendChild(element);
-            }); 
+                tbody.appendChild(element);
+            });
+            table.appendChild(tbody);
+            searchList.appendChild(table);
+            console.log(table);
         }
     }
 }
