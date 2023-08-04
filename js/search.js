@@ -82,3 +82,15 @@ function createSearchList(jsonItems, query){
 
     return items;
 }
+
+function searchListClickHandler(event){
+    let url = 'https://map.naver.com/v5/search/';
+    url += event.target.querySelector('.jsonName').innerHTML;
+
+    if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
+        url += '?lat=' + event.target.getAttribute('data-lat');
+        url += '&lng=' + event.target.getAttribute('data-lng');
+    }
+
+    window.open(url);
+}

@@ -20,7 +20,7 @@
                     if(query !== null){
                         createSearchList(jsonItems, query).forEach(element => {
                             searchList.appendChild(element);
-                        });
+                        }); 
                     }
                 }
             }
@@ -28,6 +28,7 @@
             function init(){
                 xhr.open('GET', 'BusanSafeRestaurantList.json', true);
                 xhr.send();
+                document.querySelector('.searchList').addEventListener('click', searchListClickHandler);
             }
 
             window.addEventListener('load', init);
