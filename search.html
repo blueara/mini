@@ -5,6 +5,7 @@
         <meta charset="UTF-8" />
         
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <script src="./main.js"></script>
     <script src="./js/BusanSafeRestaurantService.js"></script>
     <script>
@@ -32,26 +33,61 @@
     </head>
 
     <body>
-        <div id="nav">
-            <span class="spanTitle">
-                <span class="spanMini">부심 </span>
-                부산시 안심식당 정보 플랫폼 </span>
-            <div class="anchor">
+        <header>
+            <div id="nav">
+                <span class="spanTitle">
+                    <span class="spanMini">부심 </span>
+                    부산시 안심식당 정보 플랫폼 
+                </span>
+                <form id="searchBox" action="get">
+                    <input type="text" id="searchInput" placeholder="부산의 지역명을 입력해주세요. ex)해운대">
+                    <button id="submit">검색<i class="bi bi-search"></i></button>
+                </form>
+                
+                <div class="anchor">
                 <a href="#safe">안심식당이란?</a>
-                <a href="#busim">부심이란?</a>
-                <a href="./matzip.html" target="_blank">부심선정맛집</a>
-            </div>
-            <div id="searchBox">
-                <input type="text" id="searchInput" placeholder="부산의 지역을 입력해주세요. EX)해운대">
-                <button id="submit">검색<i class="bi bi-search"></i></button>
-            </div>
-            </div>
+                <a href="#busim">부심 서비스 안내</a>
+                <a href="./matzip.html" target="_self">부심 선정 맛집</a>
+                </div>
+                </div>
+            
+        </header>
+    
 
-        <div class="card">
-            <h5 id="jsonName">여기에 biz_nm 삽입</h5>
-            <p id="jsonTel">전화 biz_tel 삽입</p>
-            <p id="jsonAddr">주소 addrs 삽입</p>
+
+        
+        <div class="searchList">
+            <div class="searchResult" style="">
+                <span id="jsonName">여기에 biz_nm 삽입</span>
+                <span id="jsonTel">전화 biz_tel 삽입</sp>
+                <span id="jsonAddr">주소 addrs 삽입</span>
+            </div>
+            <div class="searchResult" style="">
+                <span id="jsonName">여기에 biz_nm 삽입</span>
+                <span id="jsonTel">전화 biz_tel 삽입</sp>
+                <span id="jsonAddr">주소 addrs 삽입</span>
+            </div><div class="searchResult" style="">
+                <span id="jsonName">여기에 biz_nm 삽입</span>
+                <span id="jsonTel">전화 biz_tel 삽입</sp>
+                <span id="jsonAddr">주소 addrs 삽입</span>
+            </div><div class="searchResult" style="">
+                <span id="jsonName">여기에 biz_nm 삽입</span>
+                <span id="jsonTel">전화 biz_tel 삽입</sp>
+                <span id="jsonAddr">주소 addrs 삽입</span>
+            </div><div class="searchResult" style="">
+                <span id="jsonName">여기에 biz_nm 삽입</span>
+                <span id="jsonTel">전화 biz_tel 삽입</sp>
+                <span id="jsonAddr">주소 addrs 삽입</span>
+            </div>
         </div>
+        <!-- 이름    주소            TEL
+
+        어스시 부산시 해운대 ~~~  010
+        어스시 부산시 해운대 ~~~  010
+        어스시 부산시 해운대 ~~~  010
+        어스시 부산시 해운대 ~~~  010
+        어스시 부산시 해운대 ~~~  010
+        어스시 부산시 해운대 ~~~  010 -->
 
  
         
