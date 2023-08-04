@@ -85,7 +85,13 @@ function createSearchList(jsonItems, query){
 
 function searchListClickHandler(event){
     let url = 'https://map.naver.com/v5/search/';
-    url += event.target.querySelector('.jsonName').innerHTML;
+    
+    //event.target이 span태그인지 판별. div라면 true
+    if(event.target.querySelector('.jsonAddr')){
+        url += event.target.querySelector('.jsonAddr').innerHTML;
+    } else {
+        url += event.target.parentNode.querySelector('.jsonAddr').innerHTML;
+    }
 
     if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
         url += '?lat=' + event.target.getAttribute('data-lat');
