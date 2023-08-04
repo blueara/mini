@@ -12,7 +12,7 @@ function getItem(jsonItem){
         if(geom.length !== 0){
             result = geom.slice(6, -1).split(' ');
         }
-    
+
         return result;
     }
 
@@ -88,9 +88,11 @@ function searchListClickHandler(event){
     
     //event.target이 span태그인지 판별. div라면 true
     if(event.target.querySelector('.jsonAddr')){
-        url += event.target.querySelector('.jsonAddr').innerHTML;
+        url += encodeURIComponent(event.target.querySelector('.jsonName').innerHTML);
+        //url += event.target.querySelector('.jsonAddr').innerHTML;
     } else {
-        url += event.target.parentNode.querySelector('.jsonAddr').innerHTML;
+        url += encodeURIComponent(event.target.parentNode.querySelector('.jsonName').innerHTML);
+        //url += event.target.parentNode.querySelector('.jsonAddr').innerHTML;
     }
 
     if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
