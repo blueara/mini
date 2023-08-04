@@ -1,3 +1,6 @@
+var xhr = new XMLHttpRequest();
+xhr.addEventListener('readystatechange', ajaxHandler);
+
 function parseBSRSJSON(json){
     let items = JSON.parse(json);
     items = getItems(items.getSafeRestaurantList.body.items.item);
@@ -109,3 +112,25 @@ function searchListClickHandler(event){
 
     window.open(url);
 }
+
+function ajaxHandler(){
+    if(xhr.readyState === 4 && xhr.status === 200){
+        const query = new URL(location.href).searchParams.get('query');
+        const jsonItems = parseBSRSJSON(xhr.responseText);
+        let searchList = document.querySelector('.searchList');
+        
+        if(query !== null){
+            createSearchList(jsonItems, query).forEach(element => {
+                searchList.appendChild(element);
+            }); 
+        }
+    }
+}
+
+function init(){
+    xhr.open('GET', 'BusanSafeRestaurantList.json', true);
+    xhr.send();
+    document.querySelector('.searchList').addEventListener('click', searchListClickHandler);
+}
+
+window.addEventListener('load', init);

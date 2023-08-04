@@ -7,32 +7,6 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
         
         <script src="./js/search.js"></script>
-        <script>
-            var xhr = new XMLHttpRequest();
-            xhr.addEventListener('readystatechange', ajaxHandler);
-
-            function ajaxHandler(){
-                if(xhr.readyState === 4 && xhr.status === 200){
-                    const query = new URL(location.href).searchParams.get('query');
-                    const jsonItems = parseBSRSJSON(xhr.responseText);
-                    let searchList = document.querySelector('.searchList');
-                    
-                    if(query !== null){
-                        createSearchList(jsonItems, query).forEach(element => {
-                            searchList.appendChild(element);
-                        }); 
-                    }
-                }
-            }
-
-            function init(){
-                xhr.open('GET', 'BusanSafeRestaurantList.json', true);
-                xhr.send();
-                document.querySelector('.searchList').addEventListener('click', searchListClickHandler);
-            }
-
-            window.addEventListener('load', init);
-        </script>
     </head>
 
     <body>
