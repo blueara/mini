@@ -4,20 +4,52 @@
         <title> </title>
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="./style.css">
-        <script src="./js/BusanSafeRestaurantService.js"></script>
+        <script src="./js/search.js"></script>
         <script>
-            var jsonItems;
             var xhr = new XMLHttpRequest();
             xhr.addEventListener('readystatechange', ajaxHandler);
 
-            function drawCard(){
+            function drawCard(jsonItems, query){
+                let searchList = jsonItems.searchAddr(query);
+                
+                for(let i in searchList){
+                    let searchResult = document.createElement('div');
+                    let name = document.createElement('h5');
+                    let tel = document.createElement('p');
+                    let addr = document.createElement('p');
+
+                    searchResult.setAttribute('class', 'searchResult');
+                    name.setAttribute('class', 'jsonName');
+                    tel.setAttribute('class', 'jsonTel');
+                    addr.setAttribute('class', 'jsonAddr');
+
+                    name.innerHTML = searchList[i].name;
+                    tel.innerHTML = searchList[i].tel;
+                    addr.innerHTML = searchList[i].addr;
+
+                    searchResult.setAttribute('key', i);
+                    searchResult.appendChild(name);
+                    searchResult.appendChild(tel);
+                    searchResult.appendChild(addr);
+
+                    if(searchList[i].geo){
+                        searchResult.setAttribute('data-lat', searchList[i].geo[1]);
+                        searchResult.setAttribute('data-lng', searchList[i].geo[0]);
+                    }
+
+                    searchList[i] = searchResult;
+                    console.log(searchList[i]);
+                }
             }
 
             function ajaxHandler(){
                 if(xhr.readyState === 4 && xhr.status === 200){
                     const query = new URL(location.href).searchParams.get('query');
-                    jsonItems = parseBSRSJSON(xhr.responseText);
-                    alert(query);
+                    const jsonItems = parseBSRSJSON(xhr.responseText);
+                    
+                    if(query !== null){
+                        drawCard(jsonItems, query);
+                    }
                 }
             }
 
@@ -46,10 +78,12 @@
             </form>
         </div>
 
-        <div class="card">
-            <h5 id="jsonName">여기에 biz_nm 삽입</h5>
-            <p id="jsonTel">전화 biz_tel 삽입</p>
-            <p id="jsonAddr">주소 addrs 삽입</p>
+        <div class="searchList">
+            <div class="searchResult">
+                <h5 class="jsonName">여기에 biz_nm 삽입</h5>
+                <p class="jsonTel">전화 biz_tel 삽입</p>
+                <p class="jsonAddr">주소 addrs 삽입</p>
+            </div>
         </div>
     </body>
 </html>
