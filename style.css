@@ -18,6 +18,7 @@ a {
   }
 img {
     border-style: none;
+    display: block;
     }
 header {
     position: fixed;
@@ -113,4 +114,15 @@ header {
     margin-left: 120px;
     width: 60%;
     height: 300px;
+}
+
+.searchList {
+    width: 80%;
+    border: 1px solid #1b47b3;
+    margin-left: auto;
+    margin-right: auto;
+}
+.searchResult {
+    border-bottom: 1px solid #1b47b3;
+
 }
