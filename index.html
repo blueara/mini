@@ -14,24 +14,27 @@
     <script src="./main.js"></script>
 </head>
 <body>
+    
     <header>
         <div id="nav">
-            <span class="spanTitle">부심
-                <span id="spanMini">부산시 안심식당 정보 플랫폼</span>
-            </span>
+            <a href="./index.html">
+                <span class="spanTitle">부심
+                    <span id="spanMini">부산시 안심식당 정보 플랫폼</span>
+                </span>
+            </a>&nbsp;&nbsp;
             <form id="searchBox" action="search.html">
                 <i class="bi bi-search"></i>
                 <input type="text" id="searchInput" name="query" placeholder="부산의 지역명을 입력해주세요. ex) 해운대">
             </form>
             
             <div class="anchor">
-            <a href="#safe">안심식당이란?</a>
-            <a href="#busim">부심 서비스 안내</a>
+            <a href="#row2">안심식당이란?</a>&nbsp;
+            <a href="#row3">부심 서비스 안내</a>&nbsp;
             <a href="./matzip.html" target="_self">부심 선정 맛집</a>
             </div>
         </div>
-        
     </header>
+
     <div class="row1">
             <p>
                 "마! 부산에서 외식하는데 아직도 부심을 모른다고!?"<br>
@@ -39,7 +42,7 @@
                 부산의 진짜 <span class="highlight">부</span>산 안<span class="highlight">심</span>식당을 보여드리겠습니다.</span>
             </p>
             <div class="arrowAndContent">
-                <a href="#safe"><i class="bi bi-arrow-down-circle"></i></a>
+                <a href="#row2"><i class="bi bi-arrow-down-circle"></i></a>
                 <p>
                 안심식당과<br>
                 부심이 궁금하다면?
@@ -47,110 +50,135 @@
             </div>
     </div>
 
-    <div class="row2">
-        <div class="row2Container">
-            <div class="left">
-            <img src="./img/ansimPoster1.png">
-            </div>
-            <div class="right">
-                <p id="safe">안심식당이란?</p>
-                <p>
-                    안심식당이란 코로나 19로 인한 위생과 안전에 대한 불안감을 줄이기 위해 정부에서 시행하는 프로그램인데요.<br>
-                    바로 식당 운영자들이 방역 수칙과 위생 관리에 엄격하게 준수하여 손님들에게 안전한 식사 환경을 제공하도록 하는 것을 목표로 합니다.
-                    안심식당은 농림축산식품부에서 선정합니다.
-                </p>
-            </div>
-        </div>
-        
-      
-    </div>
-
-    <div class="row2">
-        <div class="row2Container">
-            <div class="left">
-               <img src="./img/ansimPoster1.png">
-            </div>
-            <div class="right">
-                <p id="safe">안심식당이란?</p>
-                <p>
-                    안심식당이란 코로나 19로 인한 위생과 안전에 대한 불안감을 줄이기 위해 정부에서 시행하는 프로그램인데요.<br>
-                    바로 식당 운영자들이 방역 수칙과 위생 관리에 엄격하게 준수하여 손님들에게 안전한 식사 환경을 제공하도록 하는 것을 목표로 합니다.
-                    안심식당은 농림축산식품부에서 선정합니다.
-                </p>
-            </div>
-        </div>
-        
-        
-    </div>
-
-    <!-- <div class="row">
-        <p id="whatIsAnsimStandard">안심식당의 기준이 뭐지?</p>
-        <p>
-            안심식당으로 지정되기 위해서는 정부에서 제시하는 방역 지침을 따라 
-            식당 내부의 청결 유지, 손 세정제 비치, 마스크 착용 권장 등의 조치를 적극적으로 시행해야 합니다.
-             이렇게 안심식당으로 지정된 식당은 고객들이 더 안심하고 편안하게 식사를 즐길 수 있는 장소로 인정받고 있는 것이죠!<br><br>
-
-            이러한 기준을 충족하는 식당들이 농림축산식품부에 신청하여 안심식당으로 선정될 수 있습니다.
-             안심식당으로 인증되면 손님들에게 안전한 식사 환경을 제공하고 신뢰를 얻을 수 있는 장점이 있습니다.
-        </p>
-    </div> -->
     
-    <div class="row3">
-        <p id="busim">부심은 뭐야?</p>
-        <p>
-            현재까지도 위생 문제로 적발되는 음식점들로 인해 안타깝게도 애꿎은 소비자들만 많은 피해를 입고 있습니다.
-        </p>
-        <div class="indexImgBox">
-            <img src="./img/busanDirtyRestaurant1.png" width="200px" height="200px">
-            <img src="./img/busanDirtyRestaurant2.png" width="200px" height="200px">
+        
+    <div class="fromRow2toEnd">
+        <div class="row2" id="row2">
+            <div class="row2Container">
+                <div class="right">
+                    <div class="left">
+                        <img src="./img/ansimPoster1.png" id="left">
+                    </div>
+                    <p id="safe">청결함에 없던 식욕까지 살아나는 곳, <span class="blueHighlight">안심식당</span>이란?</p>
+                    
+                    <p class="fontIsRight">
+                        안심식당이란 코로나 19로 인한 위생과 안전에 대한 불안감을 줄이기위해 <br>정부에서 시행하는 프로그램인데요. 식당 운영자들이 방역 수칙과 위생 관리에 엄격하게 준수하여 손님들에게 안전한 식사 환경을 제공하도록 하는 것을 목표로 합니다.
+                    </p>
+                    <div class="government">
+                        <p id="governmentInjung"><span class="onlyBlueFont">정부에서 공인</span>하기에 안심할 수 있다</p>
+                        <p class="fontIsRight">
+                            식당 내부의 청결 유지, 손 세정제 비치, 마스크 착용 권장 등 이러한 기준을 충족하는 식당들이 <br><span class="onlyBlueFont">농림축산식품부에 신청하여 안심식당으로 선정</span>될 수 있습니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row3" id="row3">
+            <p id="busim"><span class="blueHighlight">부심</span>은 뭐야?</p>
+            <p id="articleUpFont">
+                현재까지도 위생 문제로 적발되는 음식점들로 인해 애꿎은 소비자들만 많은 피해를 입고 있습니다.
+            </p>
+            <div class="indexImgBox">
+                <img src="./img/dirtyArticle1.png" class="dirtyArticle">
+                <img src="./img/dirtyArticle2.png" class="dirtyArticle">
+            </div>
+                <span id="bigBlackFont">그래서 준비했습니다.</span>
+            <div class="fontLeftSide">
+                <p>
+                    부심은 부산의 각 지역 내에서 안심하고 외식할 수 있도록<br>
+                    정부에서 공인한 <span class="onlyBlueFont">2000개 이상의 부산시 안심식당 리스트</span>를 제공해드리는 서비스입니다.<br><br>
+
+                    해운대, 진구 등 <span class="onlyBlueFont">간단한 지역명 검색만으로 해당 지역 내 안심식당 정보</span>를 얻을 수 있습니다.
+                </p>
+            </div>
+        </div>
+
             
-        </div>
-        <p>
-            그래서 준비했습니다.<br>
-            부산의 각 지역 내에서 안심하고 외식할 수 있도록<br>
-            정부에서 공인한 부산시 안심식당 리스트를 제공해드립니다!<br><br>
-
-            해운대, 진구 등 검색창에 부산의 지역명을 입력하시면 해당 지역의 안심식당 목록을 제공해드립니다.<br> 본 식당들은 농림축산식품부에서 선정한 안심식당이기에 안심하고 외식을 즐길 수가 있겠죠?
-        </p>
-    </div>
-
-        
-        <div class="row6">
-            <div class="row6Container">
-                <h3><span class="highlight">부심</span>의 서비스</h3>
-                <div class="team_card">
-                    <img src="./img/food.jpg">
-                    <div class="team_caption">
-
-                        <p id="safeAndTasty">안심만 하면 뭐해? 맛있어야지!</p>
+        <div class="row4">
+            <div class="row4Container">
+                <div class="serviceIntro">
+                    <span>서비스 소개</span><br>
+                    <span id="whatDoYouWant">어떤 서비스가 필요하세요?</span>
+                </div>
+                <div class="team_card1">
+                    <div class="team_caption1" id="pleaseGood">
+                        <p id="safeAndTasty">부심 선정<br>맛집 BEST 10</p>
+                    </div>
+                    <div class="none1">
                         <p> 위생과 청결도 정말 정말 중요하지만 그래도 식당의 본질은 맛이겠죠?<br>
-                            부심에서 고르고 고른 맛집들을 소개합니다!</p>
+                        부심에서 고르고 고른 맛집들을 소개합니다!
+                        </p>
                     </div>
                 </div>
-                <div class="team_card">
-                    <img src="./img/review.jpg">
-                    <div class="team_caption">
-                        <p id="personalReview">맛집에 대해 개인 리뷰를 남겨보자!</p>
-                        <p>맛집에 대한 여러분만의 리얼하고 생생한 후기를 들려주세요!</p>
+
+                <div class="team_card2">
+                    <div class="team_caption2">
+                        <p id="personalReview">개인 리뷰 공간</p>
+                    </div>
+                    <div class="none2">
+                        <p>맛집에 대한 여러분만의<br>리얼하고 생생한<br>후기를 들려주세요!</p>
                         <a href="./matzip.html" target="_self">바로가기</a>
-    
                     </div>
                 </div>
-                <div class="team_card">
-                    <img src="./img/map.png">
-                    <div class="team_caption">
-                        <p id="whereIsRestaurant">그래서 거기가 어딘데?</p>
-                        <p>위치 정보를 쉽게 파악할수 있도록 한 번의 클릭으로 해당 식당의 지도를 보여드립니다!</p>
+
+                <div class="team_card3">
+                    <div class="team_caption3">
+                        <p id="whereIsRestaurant">지도 제공</p>
+                    </div>
+                    <div class="none3">  
+                        <p>위치 정보를 쉽게 파악<br>할 수 있도록 한 번의 클릭으로<br>해당 식당의<br>지도를 보여드립니다.</p>
                     </div>
                 </div>
             </div>
             
         </div>
         <div class="top">
-            <a href="#top">Top<i class="bi bi-arrow-up-circle-fill"></i></a>
+            <a href="#top"><i class="bi bi-arrow-up-circle-fill"></i></a>
+            <br><span id="spanTop">TOP</span>
         </div>
-    
+    </div>
 
 
 </body>
-</html>      
+</html>    
+
+
+
+
+            <!-- <div class="row4">
+                <div class="row4Container">
+                    <div class="serviceIntro">
+                        <span>서비스 소개</span><br>
+                        <span id="whatDoYouWant">어떤 서비스가 필요하세요?</span>
+                    </div>
+                    <div class="team_card">
+                        <img src="./img/food.jpg" id="food">
+                        <div class="team_caption">
+
+                            <p id="safeAndTasty">안심만 하면 뭐해? 맛있어야지!</p>
+                            <p> 위생과 청결도 정말 정말 중요하지만 그래도 식당의 본질은 맛이겠죠?<br>
+                                부심에서 고르고 고른 맛집들을 소개합니다!</p>
+                        </div>
+                    </div>
+                    <div class="team_card">
+                        <img src="./img/review.jpg">
+                        <div class="team_caption">
+                            <p id="personalReview">맛집에 대해 개인 리뷰를 남겨보자!</p>
+                            <p>맛집에 대한 여러분만의 리얼하고 생생한 후기를 들려주세요!</p>
+                            <a href="./matzip.html" target="_self">바로가기</a>
+        
+                        </div>
+                    </div>
+                    <div class="team_card">
+                        <img src="./img/map.png">
+                        <div class="team_caption">
+                            <p id="whereIsRestaurant">그래서 거기가 어딘데?</p>
+                            <p>위치 정보를 쉽게 파악할수 있도록 한 번의 클릭으로 해당 식당의 지도를 보여드립니다!</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div> -->
+            
+  
