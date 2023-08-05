@@ -159,11 +159,19 @@ header {
     margin-top: 60px;
     width: 800px;
     height: 300px;
-    float: left;
-
+    /* float: left; */
+    margin-left: auto;
+    margin-right: auto;
     padding: 40px;
 }
 .imgBox {
+    float: left;
+    width: 30%;
+    height: 200px;
+    background-color: #FF7100;
+    
+}
+.indexImgBox {
     /* float: left; */
     width: 1000px;
     height: 200px;
