@@ -2,11 +2,20 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 1.5px;
   }
 
-body{
+body {
     margin: 0px;
     padding-top: 120px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    min-width: auto;
+}
+div {
+    min-width: auto;
 }
 html {
     line-height : 1.15; /*기본 행간 높이*/
@@ -16,6 +25,11 @@ a {
     background-color: transparent;
     color: white;
   }
+
+a:hover {
+     color: white; text-decoration: none;
+    }
+
 img {
     border-style: none;
     display: block;
@@ -25,57 +39,76 @@ p {
 }
 header {
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     right: 0;
     /* float: left; */
 }
-#nav{
-    background-color : #1b47b3 ;
-    /* color : white; */
-    width : 100%;
-    height: 120px;
-    /* line-height: 300px; */
-    float: left; 
-    /* margin-bottom: 100px; */
-    padding-top: 20px;
 
+#nav {
+    background-color : #1b47b3 ;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
 }
 .spanTitle {
-    width: 20%;
-    float: left;
     color: white;
-    padding-left: 20px;
+    font-size: 3vw;
 }
-.anchor {
-    width: 20%;
-    float: right;
-}
-.highlight{
-    font-size: 2em;
-    color: #1b47b3;
-    font-weight: bold;
-}
-.spanMini{
-    font-size: 40px;
-}
-#searchBox {
-    width: 60%;
-    background-color: #1b47b3 ;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-#searchInput {
-    box-sizing: border-box;
-    width: 80%;
-    height: 80%;
-    font-size: 40px;
 
-    /* padding: 10px; */
-    border-radius: 60px; 
-    /* line-height: 80%; */
-    /* padding-left: 40px; */
+#spanMini{
+    font-size: 1vw;
+}
+
+.highlight{
+    font-size: 1.3em;
+    color: #3272e9;
+    text-shadow: 1px 1px 5px black;
+}
+
+#searchBox {
+    position: relative;
+    width: 50%;
+    min-width: 400px;
+    background-color: #1b47b3;
+    border-radius: 30px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchInput {
+    position: relative;
+    padding: 11px 20px;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    font-size: 19px;
+    background-color: white;
+    color: #333;
+    padding-left: 50px;
+    outline: none;
+}
+
+.bi-search {
+    position: absolute;
+    left: 20px;
+    color: #999;
+    z-index: 1;
+}
+
+.anchor {
+    display: flex;
+}
+
+.anchor a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
 }
 
 .container {
@@ -83,10 +116,7 @@ header {
     margin-left: auto;
     margin-right: auto;
 }
-.submit {
-    height: 120px;
-    width: 150px;
-}
+
 .row{
     background: #e9ecef;
     width : 100%;
@@ -97,23 +127,52 @@ header {
     margin-bottom: 20px;
 }
 .row1{
-    /* background: #e9ecef; */
+    font-weight: 505;
+    position: relative;
     width : 100%;
-    height: 800px;
-    padding-top: 40px;
+    height: 850px;
+    padding-top: 130px;
     padding-left: 40px;
     border: 0px;
     margin: 0 auto;
     margin-bottom: 20px;
-    background: url(./img/busanSea.jpg);
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)), url(./img/busanSea.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    color: black;
+    color: white;
     text-align: center;
-    font-size: 1.5em;
-   
-
+    font-size: 1.3em;
 }
+
+.row1 :first-child{
+    margin-top: 4%;
+    font-size: 50px;
+}
+
+#showBusanBusim {
+    font-size: 36px;
+    display: inline-block;
+    margin-top: 4%;
+    margin-left: 20%;
+    text-align: right;
+}
+
+.bi-arrow-down-circle {
+    font-size: 300%;
+}
+
+.arrowAndContent {
+    position: absolute;
+    left: 46%;
+    bottom: 9%;
+}
+
+.arrowAndContent p {
+    font-size: 18px;
+}
+
 .row2{
     /* background: #e9ecef; */
     width : 80%;
@@ -147,12 +206,6 @@ header {
     width: 70%;
     padding: 20px;
     float: left;
-
-}
-.anchor {
-    color: white;
-    text-align: right;
-    text-decoration-line: none;
 }
 .card {
     border: 1px solid #1b47b3;
