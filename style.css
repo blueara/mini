@@ -207,6 +207,15 @@ header {
     padding: 20px;
     float: left;
 }
+.top {
+    text-align: center;
+    clear: both;
+}
+.top a {
+    color: #1b47b3;
+    font-size: 2em;
+
+}
 .card {
     border: 1px solid #1b47b3;
     margin-top: 60px;
@@ -251,8 +260,7 @@ header {
     margin-bottom: 20px;
 }
 .cardContent {
-    margin-left: 120px;
-    width: 60%;
+    width: 600px;
     height: 300px;
 }
 
@@ -315,4 +323,9 @@ header {
 }
 .team_card i {
     font-size: 40px;
+}
+#jsonName {
+    color: #1b47b3;
+    font-size: 1.5em;
+    margin: 0;
 }
