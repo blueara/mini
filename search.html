@@ -3,59 +3,32 @@
     <head>
         <title> </title>
         <meta charset="UTF-8" />
-        
-    <link rel="stylesheet" href="./style.css">
-    <script src="./main.js"></script>
-    <script src="./js/BusanSafeRestaurantService.js"></script>
-    <script>
-        var jsonItems;
-        var xhr = new XMLHttpRequest();
-        xhr.addEventListener('readystatechange', ajaxHandler);
-
-        function drawCard(){
-        }
-
-        function ajaxHandler(){
-            if(xhr.readyState === 4 && xhr.status === 200){
-                jsonItems = parseBSRSJSON(xhr.responseText);
-
-            }
-        }
-
-        function init(){
-            xhr.open('GET', 'BusanSafeRestaurantList.json', true);
-            xhr.send();    
-        }
-
-        window.addEventListener('load', init);
-    </script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">   
+        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./css/search.css">
+        <script src="./js/search.js"></script>
     </head>
 
     <body>
-        <div id="nav">
-            <span class="spanTitle">
-                <span class="spanMini">부심 </span>
-                부산시 안심식당 정보 플랫폼 </span>
-            <div class="anchor">
+        <header>
+            <div id="nav">
+                <span class="spanTitle">
+                    <span class="spanMini">부심 </span>
+                    부산시 안심식당 정보 플랫폼 
+                </span>
+                <form id="searchBox" action="search.html">
+                    <input type="text" id="searchInput" name="query" placeholder="부산의 지역명을 입력해주세요. ex)해운대">
+                    <button type="submit" id="submit">검색<i class="bi bi-search"></i></button>
+                </form>
+                
+                <div class="anchor">
                 <a href="#safe">안심식당이란?</a>
                 <a href="#busim">부심이란?</a>
                 <a href="./matzip.html" target="_blank">부심선정맛집</a>
             </div>
-            <div id="searchBox">
-                <input type="text" id="searchInput" placeholder="부산의 지역을 입력해주세요. EX)해운대">
-                <button id="submit">검색<i class="bi bi-search"></i></button>
-            </div>
-            </div>
+        </header>
 
-        <div class="card">
-            <h5 id="jsonName">여기에 biz_nm 삽입</h5>
-            <p id="jsonTel">전화 biz_tel 삽입</p>
-            <p id="jsonAddr">주소 addrs 삽입</p>
+        <div class="searchList">
         </div>
-
- 
-        
-        
     </body>
 </html>
-
