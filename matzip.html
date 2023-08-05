@@ -7,15 +7,32 @@
     <script src="./main.js"></script>
 </head>
 <body>
-    <div id="searchBox">
-        <input type="text" id="searchInput" placeholder="부산의 지역을 입력해주세요. EX)해운대">
-        <input type="submit" value="검색"><br>
-    </div>
+    
+    <header>
+        <div id="nav">
+            <span class="spanTitle">
+                <span class="spanMini">부심 </span>
+                부산시 안심식당 정보 플랫폼 
+            </span>
+            <form id="searchBox" action="search.html">
+                <input type="text" id="searchInput" name="query" placeholder="부산의 지역명을 입력해주세요. ex)해운대">
+                <button type="submit" id="submit">검색<i class="bi bi-search"></i></button>
+            </form>
+            
+            <div class="anchor">
+            <a href="#safe">안심식당이란?</a>
+            <a href="#busim">부심 서비스 안내</a>
+            <a href="./matzip.html" target="_self">부심 선정 맛집</a>
+            </div>
+            </div>
+        
+    </header>
     <!-- input class="review" 로 변경 및 각각 번호 부여 -->
     <!-- save, remove button id -> class 로 변경 및 각각 번호 부여 -->
     <div class="card">
         <div class="imgBox">
-            <img src="./img/choihaejang.jpg" width="100%">
+            <img src="./img/choihaejang.jpg" width="100%" height="220px" >
+
         </div>
         <div class="cardContent" id="card1">
             <h5 id="jsonName">최뼈다구해장국</h5>
@@ -28,7 +45,8 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/daegual.png" width="100%">
+            <img src="./img/daegual.png" width="100%"  height="220px">
+
         </div>
         <div class="cardContent" id="card2">
             <h5 id="jsonName">대궐안집</h5>
@@ -41,7 +59,8 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/dolsot.jpg" width="100%">
+            <img src="./img/dolsot.jpg" width="100%"  height="220px">
+
         </div>
         <div class="cardContent" id="card3">
             <h5 id="jsonName">돌솟해물뼈찜</h5>
@@ -54,7 +73,8 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/sasangtail.jpg" width="100%">
+            <img src="./img/sasangtail.jpg" width="100%"  height="220px">
+
         </div>
         <div class="cardContent" id="card4">
             <h5 id="jsonName">사상꼬리집</h5>
@@ -67,7 +87,7 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/milmyeon.png" width="100%">
+            <img src="./img/milmyeon.png" width="100%" height="220px">
         </div>
         <div class="cardContent" id="card5">
             <h5 id="jsonName">사상초량밀면</h5>
@@ -80,7 +100,7 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/jinjoobok.jpg" width="100%">
+            <img src="./img/jinjoobok.jpg" width="100%" height="220px">
         </div>
         <div class="cardContent" id="card6">
             <h5 id="jsonName">진주복집</h5>
@@ -93,7 +113,7 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/donghae.jpg" width="100%">
+            <img src="./img/donghae.jpg" width="100%" height="220px">
         </div>
         <div class="cardContent" id="card7">
             <h5 id="jsonName">동해물회</h5>
@@ -106,7 +126,7 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/sososusan.jpg" width="100%">
+            <img src="./img/sososusan.jpg" width="100%" height="220px">
         </div>
         <div class="cardContent" id="card8">
             <h5 id="jsonName">소소수산</h5>
@@ -119,7 +139,7 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/sampig.png" width="100%">
+            <img src="./img/sampig.png" width="100%" height="220px">
         </div>
         <div class="cardContent" id="card9">
             <h5 id="jsonName">삼돼지식당</h5>
@@ -132,7 +152,7 @@
     </div>
     <div class="card">
         <div class="imgBox">
-            <img src="./img/yakimans1.jpg" width="100%">
+            <img src="./img/yakimans1.jpg" width="100%" height="220px">
         </div>
         <div class="cardContent" id="card10">
             <h5 id="jsonName">야키맨즈</h5>
