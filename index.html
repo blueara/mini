@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="./main.js"></script>
 </head>
 <body>
-    <!-- push되나요 -->
     <header>
         <div id="nav">
-            <span class="spanTitle">
-                <span class="spanMini">부심 </span>
-                부산시 안심식당 정보 플랫폼 
+            <span class="spanTitle">부심
+                <span id="spanMini">부산시 안심식당 정보 플랫폼</span>
             </span>
-            <form id="searchBox" action="get">
-                <input type="text" id="searchInput" placeholder="부산의 지역명을 입력해주세요. ex)해운대">
-                <button id="submit">검색<i class="bi bi-search"></i></button>
+            <form id="searchBox" action="search.html">
+                <i class="bi bi-search"></i>
+                <input type="text" id="searchInput" name="query" placeholder="부산의 지역명을 입력해주세요. ex) 해운대">
             </form>
             
             <div class="anchor">
@@ -28,16 +29,37 @@
             <a href="#busim">부심 서비스 안내</a>
             <a href="./matzip.html" target="_self">부심 선정 맛집</a>
             </div>
-            </div>
+        </div>
         
     </header>
-
-    <div class="row">
-        <div>
+    <div class="row1">
             <p>
-                마! 부산에서 외식하는데 아직도 부심을 모른다고!?<br>
-                부산의 진짜 <span class="highlight">부</span>산 안<span class="highlight">심</span>식당을 보여 줄게!
+                "마! 부산에서 외식하는데 아직도 부심을 모른다고!?"<br>
+                <span id="showBusanBusim">바다만이 부산의 자부심이 아닙니다.<br>
+                부산의 진짜 <span class="highlight">부</span>산 안<span class="highlight">심</span>식당을 보여드리겠습니다.</span>
             </p>
+            <div class="arrowAndContent">
+                <a href="#safe"><i class="bi bi-arrow-down-circle"></i></a>
+                <p>
+                안심식당과<br>
+                부심이 궁금하다면?
+                </p>
+            </div>
+    </div>
+
+    <div class="row2">
+        <div class="row2Container">
+            <div class="left">
+            <img src="./img/ansimPoster1.png">
+            </div>
+            <div class="right">
+                <p id="safe">안심식당이란?</p>
+                <p>
+                    안심식당이란 코로나 19로 인한 위생과 안전에 대한 불안감을 줄이기 위해 정부에서 시행하는 프로그램인데요.<br>
+                    바로 식당 운영자들이 방역 수칙과 위생 관리에 엄격하게 준수하여 손님들에게 안전한 식사 환경을 제공하도록 하는 것을 목표로 합니다.
+                    안심식당은 농림축산식품부에서 선정합니다.
+                </p>
+            </div>
         </div>
         
         
