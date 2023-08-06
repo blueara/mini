@@ -105,21 +105,29 @@ function createSearchList(jsonItems, query){
 
 function searchListClickHandler(event){
     let url = 'https://map.naver.com/v5/search/';
+
+    console.log(event.target);
+    console.log(event.target.nodeName);
+
+    //event.target이 td 요소를 클릭했는지 판별. 아닐시 핸들러 종료
+    if(event.target.nodeName.toLowerCase() === 'td'){
+        if(event.target.querySelector('.jsonAddr')){
+            url += encodeURIComponent(event.target.querySelector('.jsonAddr').innerHTML);
+        } else {
+            url += encodeURIComponent(event.target.parentNode.querySelector('.jsonAddr').innerHTML);
+        }
+
+        //좌표값이 있다면 파라미터에 더함
+        if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
+            url += '?lat=' + event.target.getAttribute('data-lat');
+            url += '&lng=' + event.target.getAttribute('data-lng');
+        }
     
-    //event.target이 span태그인지 판별. div라면 true
-    if(event.target.querySelector('.jsonAddr')){
-        url += encodeURIComponent(event.target.querySelector('.jsonAddr').innerHTML);
+        window.open(url);
+        
     } else {
-        url += encodeURIComponent(event.target.parentNode.querySelector('.jsonAddr').innerHTML);
+        return null;
     }
-
-    //좌표값이 있다면 파라미터에 더함
-    if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
-        url += '?lat=' + event.target.getAttribute('data-lat');
-        url += '&lng=' + event.target.getAttribute('data-lng');
-    }
-
-    window.open(url);
 }
 
 function ajaxHandler(){
@@ -148,7 +156,6 @@ function ajaxHandler(){
             });
             table.appendChild(tbody);
             searchList.appendChild(table);
-            console.log(table);
         }
     }
 }
