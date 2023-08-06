@@ -141,6 +141,11 @@ function ajaxHandler(){
         let tr = document.createElement('tr');
         let noSearch = false;
 
+        table.innerHTML += '<colgroup>' + 
+                '<col width="25%">' + 
+                '<col width="20%">' +
+                '<col width="55%"></colgroup>';
+
         // thead 생성
         for(let i = 0; i < 3; i++){
             tr.appendChild(document.createElement('th')); 
@@ -151,8 +156,8 @@ function ajaxHandler(){
         tr.children[2].innerHTML = '주소';
 
         table.appendChild(document.createElement('thead'));
-        table.firstChild.appendChild(tr);
-        
+        table.lastChild.appendChild(tr);
+
         // tbody 생성
         let tbody = document.createElement('tbody');
         let searchResults = createSearchList(jsonItems, query);
