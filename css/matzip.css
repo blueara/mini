@@ -1,0 +1,66 @@
+.cardContent h5 {
+    padding-bottom: 15px;
+}
+
+.cardContent hr {
+    border: solid 1px #1b47b3;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    padding: 2px 0;
+}
+
+.cardContent p {
+    padding: 5px 0;
+    font-size: 1.0em;
+}
+
+.textareaBox {
+    padding-top: 4px;
+}
+
+.textareaBox textarea {
+    padding: 10px;
+    width: 64%;
+    height: 60px;
+    border: solid 1px #1b47b3;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: bold 13px;
+    font-weight: bold;
+    resize: none;
+}
+
+.save {
+    margin: 5px 10px 0 0;
+    padding: 5px 20px;
+    display: inline-block;
+    color: #1b47b3;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.save:hover {
+    background: #1b47b3;
+    color: white;
+    transition: all 0.3s;
+}
+
+.remove {
+    margin: 5px 5px 0 0;
+    padding: 5px 20px;
+    display: inline-block;
+    color: #1b47b3;
+    background-color: #fff;
+    border: 1px solid #e8e8e8;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.remove:hover {
+    background: #1b47b3;
+    color: white;
+    transition: all 0.3s;
+}
