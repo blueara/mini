@@ -8,18 +8,20 @@
 #noResult {
     color: grey;
     font-size: 3em;
-    
+    text-align: center;
+    height: 500px;
+    line-height: 500px;
 }
 
 table {
-    border-spacing: 1;
     border-collapse: collapse;
     background: white;
     border-radius: 6px;
     overflow: auto;
     max-width: 1000px;
     display: block;
-    height: 650px;
+    height: 735px;
+    width: 100%;
 }
 
 table * {
@@ -50,10 +52,6 @@ table thead tr {
 table tbody tr {
     height: 48px;
     border-bottom: 1px solid #1b47b3;
-}
-
-table tbody tr:last-child {
-    border: 0;
 }
 
 table td, table th {
@@ -96,10 +94,6 @@ table td.r, table th.r {
     table tbody tr td {
         padding-left: 45%;
         margin-bottom: 12px;
-    }
-
-    table tbody tr td:last-child {
-        margin-bottom: 0;
     }
 
     table tbody tr td:before {
