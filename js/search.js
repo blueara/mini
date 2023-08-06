@@ -132,14 +132,16 @@ function searchListClickHandler(event){
 
 function ajaxHandler(){
     if(xhr.readyState === 4 && xhr.status === 200){
-        const query = new URL(location.href).searchParams.get('query');
         const jsonItems = parseBSRSJSON(xhr.responseText);
+        // search.html?query= 쿼리 파라미터가 있으나 공백인 경우 null이 아닙니다
+        const query = new URL(location.href).searchParams.get('query') !== null ? 
+                        new URL(location.href).searchParams.get('query') : '';
         let searchList = document.querySelector('.searchList');
         let table = document.createElement('table');
         let tr = document.createElement('tr');
         let noSearch = false;
 
-        //thead 생성
+        // thead 생성
         for(let i = 0; i < 3; i++){
             tr.appendChild(document.createElement('th')); 
         }
@@ -150,24 +152,20 @@ function ajaxHandler(){
 
         table.appendChild(document.createElement('thead'));
         table.firstChild.appendChild(tr);
+        
+        // tbody 생성
+        let tbody = document.createElement('tbody');
+        let searchResults = createSearchList(jsonItems, query);
 
-        console.log(new Boolean(query));
-
-        // search.html?query= 쿼리 파라미터가 있으나 공백인 경우 null이 아닙니다
-        if(query){
-            let tbody = document.createElement('tbody');
-            let searchResults = createSearchList(jsonItems, query);
-
-            console.log(searchResults.length);
-            if(searchResults.length !== 0){
-                searchResults.forEach(element => {
-                    tbody.appendChild(element);
-                });
-                table.appendChild(tbody);
-                searchList.appendChild(table);
-            } else {
-                noSearch = true;
-            }
+        // 검색값이 존재하는지 검사
+        if(searchResults.length !== 0){
+            searchResults.forEach(element => {
+                tbody.appendChild(element);
+            });
+            table.appendChild(tbody);
+            searchList.appendChild(table);
+        } else {
+            noSearch = true;
         }
 
         if(noSearch) {
