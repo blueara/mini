@@ -1,7 +1,8 @@
 .searchList {
-    margin: 0 auto;
-    border: 0;
+    max-width: 1000px;
+    margin: 35px auto;
     padding: 0;
+    width: 80%;
 }
 
 #noResult {
@@ -17,7 +18,6 @@ table {
     border-radius: 6px;
     overflow: auto;
     max-width: 1000px;
-    margin: 50px auto 0;
     display: block;
     height: 650px;
 }
@@ -31,6 +31,10 @@ table thead{
     position: sticky;
     top: 0px;
     z-index: 1;
+}
+
+table tbody{
+    cursor: pointer;
 }
 
 table td, table th {
