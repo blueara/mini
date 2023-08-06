@@ -68,6 +68,7 @@ function getItems(jsonItems){
     return itemList;
 }
 
+// .searchResult 테이블의 행을 만들어서 반환합니다
 function createSearchList(jsonItems, query){
     let items = jsonItems.searchItems(query);
     
@@ -77,6 +78,7 @@ function createSearchList(jsonItems, query){
         let tel = document.createElement('td');
         let addr = document.createElement('td');
 
+        //css에선 .searchResult 속성을 더이상 사용하지 않음..
         searchResult.setAttribute('class', 'searchResult');
         name.setAttribute('class', 'jsonName');
         tel.setAttribute('class', 'jsonTel');
@@ -103,6 +105,7 @@ function createSearchList(jsonItems, query){
     return items;
 }
 
+//searchList div태그내 table 요소를 클릭했을때 네이버 지도 링크를 새 창에서 열어주는 핸들러
 function searchListClickHandler(event){
     let url = 'https://map.naver.com/v5/search/';
 
@@ -134,7 +137,9 @@ function ajaxHandler(){
         let searchList = document.querySelector('.searchList');
         let table = document.createElement('table');
         let tr = document.createElement('tr');
+        let noSearch = false;
 
+        //thead 생성
         for(let i = 0; i < 3; i++){
             tr.appendChild(document.createElement('th')); 
         }
@@ -146,13 +151,28 @@ function ajaxHandler(){
         table.appendChild(document.createElement('thead'));
         table.firstChild.appendChild(tr);
 
-        if(query !== null){
+        console.log(new Boolean(query));
+
+        // search.html?query= 쿼리 파라미터가 있으나 공백인 경우 null이 아닙니다
+        if(query){
             let tbody = document.createElement('tbody');
-            createSearchList(jsonItems, query).forEach(element => {
-                tbody.appendChild(element);
-            });
-            table.appendChild(tbody);
-            searchList.appendChild(table);
+            let searchResults = createSearchList(jsonItems, query);
+
+            console.log(searchResults.length);
+            if(searchResults.length !== 0){
+                searchResults.forEach(element => {
+                    tbody.appendChild(element);
+                });
+                table.appendChild(tbody);
+                searchList.appendChild(table);
+            } else {
+                noSearch = true;
+            }
+        }
+
+        if(noSearch) {
+            let str = '<p id="noResult">검색된 결과가 없습니다!</p>'
+            searchList.innerHTML = str;
         }
     }
 }

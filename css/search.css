@@ -1,7 +1,13 @@
-.searchList{
+.searchList {
     margin: 0 auto;
     border: 0;
     padding: 0;
+}
+
+#noResult {
+    color: grey;
+    font-size: 3em;
+    
 }
 
 table {
