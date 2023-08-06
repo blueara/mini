@@ -144,7 +144,7 @@ header {
     margin: -20px 0 auto;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)), url(./img/busanSea.jpg);
+        rgba(0, 0, 0, 0.6)), url(../img/busanSea.jpg);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     color: white;
@@ -201,7 +201,7 @@ header {
     margin-right: auto;
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.94),
-        rgba(255, 255, 255, 0.94)), url(./img/logo.png);;
+        rgba(255, 255, 255, 0.94)), url(../img/logo.png);
     background-repeat: no-repeat;
     background-size: 43%;
     background-position: right bottom;
@@ -329,7 +329,7 @@ header {
     text-align: center;
     margin-bottom: 200px;
     background-image: linear-gradient(to left, transparent 1%, white),
-    url(./img/imgBusiness.jpg);
+    url(../img/imgBusiness.jpg);
 }
 .row3 img {
     float: left;
@@ -357,7 +357,7 @@ header {
     float: left;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)), url(./img/newFood.jpg);
+        rgba(0, 0, 0, 0.6)), url(../img/newFood.jpg);
     background-repeat: no-repeat;
     width: 300px;
     padding: 10px;
@@ -390,7 +390,7 @@ header {
     float: left;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)), url(./img/newReview.jpg);
+        rgba(0, 0, 0, 0.6)), url(../img/newReview.jpg);
     background-repeat: no-repeat;
     width: 300px;
     padding: 10px;
@@ -424,7 +424,7 @@ header {
     float: left;
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.6),
-        rgba(0, 0, 0, 0.6)), url(./img/newMap.jpg);
+        rgba(0, 0, 0, 0.6)), url(../img/newMap.jpg);
     background-repeat: no-repeat;
     width: 300px;
     padding: 10px;
