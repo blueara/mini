@@ -5,6 +5,9 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
     <script src="./main.js"></script>
 </head>
@@ -12,23 +15,24 @@
     
     <header>
         <div id="nav">
-            <span class="spanTitle">
-                <span class="spanMini">부심 </span>
-                부산시 안심식당 정보 플랫폼 
-            </span>
+            <a href="./index.html">
+                <span class="spanTitle">부심
+                    <span id="spanMini">부산시 안심식당 정보 플랫폼</span>
+                </span>
+            </a>&nbsp;&nbsp;
             <form id="searchBox" action="search.html">
-                <input type="text" id="searchInput" name="query" placeholder="부산의 지역명을 입력해주세요. ex)해운대">
-                <button type="submit" id="submit">검색<i class="bi bi-search"></i></button>
+                <i class="bi bi-search"></i>
+                <input type="text" id="searchInput" name="query" placeholder="부산의 지역명을 입력해주세요. ex) 해운대">
             </form>
             
             <div class="anchor">
-            <a href="#safe">안심식당이란?</a>
-            <a href="#busim">부심 서비스 안내</a>
+            <a href="#row2">안심식당이란?</a>&nbsp;
+            <a href="#row3">부심 서비스 안내</a>&nbsp;
             <a href="./matzip.html" target="_self">부심 선정 맛집</a>
             </div>
-            </div>
-        
+        </div>
     </header>
+
     <!-- input class="review" 로 변경 및 각각 번호 부여 -->
     <!-- save, remove button id -> class 로 변경 및 각각 번호 부여 -->
     <div class="card">
