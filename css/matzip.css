@@ -47,11 +47,12 @@
 
 .textareaBox {
     padding-top: 4px;
+    float: left;
 }
 
 .textareaBox textarea {
     padding: 10px;
-    width: 64%;
+    width: 350px;
     height: 60px;
     border: solid 1px #1b47b3;
     border-radius: 5px;
@@ -61,7 +62,7 @@
     resize: none;
 }
 
-.save {
+.save, .remove {
     margin: 5px 10px 0 0;
     padding: 5px 20px;
     display: inline-block;
@@ -72,24 +73,7 @@
     transition: all 0.3s;
 }
 
-.save:hover {
-    background: #1b47b3;
-    color: white;
-    transition: all 0.3s;
-}
-
-.remove {
-    margin: 5px 5px 0 0;
-    padding: 5px 20px;
-    display: inline-block;
-    color: #1b47b3;
-    background-color: #fff;
-    border: 1px solid #e8e8e8;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.remove:hover {
+.save:hover, .remove:hover {
     background: #1b47b3;
     color: white;
     transition: all 0.3s;
