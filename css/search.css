@@ -1,5 +1,7 @@
 .searchList{
+    margin: 0 auto;
     border: 0;
+    padding: 0;
 }
 
 table {
@@ -9,7 +11,6 @@ table {
     border-radius: 6px;
     overflow: auto;
     max-width: 1000px;
-    width: 1000px;
     margin: 50px auto 0;
     display: block;
     height: 650px;
@@ -34,10 +35,6 @@ table thead tr {
     height: 60px;
     background: #1b47b3;
     font-size: 16px;
-}
-
-table thead th{
-    
 }
 
 table tbody tr {
