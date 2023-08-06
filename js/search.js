@@ -124,7 +124,7 @@ function searchListClickHandler(event){
         }
     
         window.open(url);
-        
+
     } else {
         return null;
     }
@@ -164,6 +164,7 @@ function init(){
     xhr.open('GET', 'BusanSafeRestaurantList.json', true);
     xhr.send();
     document.querySelector('.searchList').addEventListener('click', searchListClickHandler);
+    document.querySelector('#searchInput').value = new URL(location.href).searchParams.get('query');
 }
 
 window.addEventListener('load', init);
