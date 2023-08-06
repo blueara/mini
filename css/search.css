@@ -23,6 +23,7 @@ table thead{
     color: #f0f0f0;
     position: sticky;
     top: 0px;
+    z-index: 1;
 }
 
 table td, table th {
