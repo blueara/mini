@@ -111,12 +111,9 @@ function searchListClickHandler(event){
 
     //event.target이 td 요소를 클릭했는지 판별. 아닐시 핸들러 종료
     if(event.target.nodeName.toLowerCase() === 'td'){
-        if(event.target.querySelector('.jsonAddr')){
-            url += encodeURIComponent(event.target.querySelector('.jsonAddr').innerHTML);
-        } else {
-            url += encodeURIComponent(event.target.parentNode.querySelector('.jsonAddr').innerHTML);
-        }
-
+        
+        url += encodeURIComponent(event.target.parentNode.children[2].innerHTML);
+        
         //좌표값이 있다면 파라미터에 더함
         if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
             url += '?lat=' + event.target.getAttribute('data-lat');
