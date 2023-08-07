@@ -118,7 +118,7 @@ function searchListClickHandler(event){
         url += encodeURIComponent(event.target.parentNode.children[2].innerHTML);
         
         //좌표값이 있다면 파라미터에 더함
-        if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
+        if(event.target.parentNode.getAttribute('data-lat') && event.target.parentNode.getAttribute('data-lng')){
             url += '?lat=' + event.target.getAttribute('data-lat');
             url += '&lng=' + event.target.getAttribute('data-lng');
         }
