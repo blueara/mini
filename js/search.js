@@ -68,6 +68,7 @@ function getItems(jsonItems){
     return itemList;
 }
 
+// .searchResult 테이블의 행을 만들어서 반환합니다
 function createSearchList(jsonItems, query){
     let items = jsonItems.searchItems(query);
     
@@ -77,6 +78,7 @@ function createSearchList(jsonItems, query){
         let tel = document.createElement('td');
         let addr = document.createElement('td');
 
+        //css에선 .searchResult 속성을 더이상 사용하지 않음..
         searchResult.setAttribute('class', 'searchResult');
         name.setAttribute('class', 'jsonName');
         tel.setAttribute('class', 'jsonTel');
@@ -103,33 +105,48 @@ function createSearchList(jsonItems, query){
     return items;
 }
 
+//searchList div태그내 table 요소를 클릭했을때 네이버 지도 링크를 새 창에서 열어주는 핸들러
 function searchListClickHandler(event){
     let url = 'https://map.naver.com/v5/search/';
+
+    console.log(event.target);
+    console.log(event.target.nodeName);
+
+    //event.target이 td 요소를 클릭했는지 판별. 아닐시 핸들러 종료
+    if(event.target.nodeName.toLowerCase() === 'td'){
+        
+        url += encodeURIComponent(event.target.parentNode.children[2].innerHTML);
+        
+        //좌표값이 있다면 파라미터에 더함
+        if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
+            url += '?lat=' + event.target.getAttribute('data-lat');
+            url += '&lng=' + event.target.getAttribute('data-lng');
+        }
     
-    //event.target이 span태그인지 판별. div라면 true
-    if(event.target.querySelector('.jsonAddr')){
-        url += encodeURIComponent(event.target.querySelector('.jsonAddr').innerHTML);
+        window.open(url);
+
     } else {
-        url += encodeURIComponent(event.target.parentNode.querySelector('.jsonAddr').innerHTML);
+        return null;
     }
-
-    //좌표값이 있다면 파라미터에 더함
-    if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
-        url += '?lat=' + event.target.getAttribute('data-lat');
-        url += '&lng=' + event.target.getAttribute('data-lng');
-    }
-
-    window.open(url);
 }
 
 function ajaxHandler(){
     if(xhr.readyState === 4 && xhr.status === 200){
-        const query = new URL(location.href).searchParams.get('query');
         const jsonItems = parseBSRSJSON(xhr.responseText);
+        // search.html?query= 쿼리 파라미터가 있으나 공백인 경우 null이 아닙니다
+        const query = new URL(location.href).searchParams.get('query') !== null ? 
+                        new URL(location.href).searchParams.get('query') : '';
         let searchList = document.querySelector('.searchList');
         let table = document.createElement('table');
         let tr = document.createElement('tr');
+        let noSearch = false;
 
+        table.innerHTML += '<colgroup>' + 
+                '<col width="25%">' + 
+                '<col width="20%">' +
+                '<col width="55%"></colgroup>';
+
+        // thead 생성
         for(let i = 0; i < 3; i++){
             tr.appendChild(document.createElement('th')); 
         }
@@ -139,16 +156,26 @@ function ajaxHandler(){
         tr.children[2].innerHTML = '주소';
 
         table.appendChild(document.createElement('thead'));
-        table.firstChild.appendChild(tr);
+        table.lastChild.appendChild(tr);
 
-        if(query !== null){
-            let tbody = document.createElement('tbody');
-            createSearchList(jsonItems, query).forEach(element => {
+        // tbody 생성
+        let tbody = document.createElement('tbody');
+        let searchResults = createSearchList(jsonItems, query);
+
+        // 검색값이 존재하는지 검사
+        if(searchResults.length !== 0){
+            searchResults.forEach(element => {
                 tbody.appendChild(element);
             });
             table.appendChild(tbody);
             searchList.appendChild(table);
-            console.log(table);
+        } else {
+            noSearch = true;
+        }
+
+        if(noSearch) {
+            let str = '<p id="noResult">검색된 결과가 없습니다!</p>'
+            searchList.innerHTML = str;
         }
     }
 }
@@ -157,6 +184,7 @@ function init(){
     xhr.open('GET', 'BusanSafeRestaurantList.json', true);
     xhr.send();
     document.querySelector('.searchList').addEventListener('click', searchListClickHandler);
+    document.querySelector('#searchInput').value = new URL(location.href).searchParams.get('query');
 }
 
 window.addEventListener('load', init);

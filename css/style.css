@@ -377,7 +377,6 @@ header {
     margin-top: 50%;
 }
 
-
 .team_card3 {
     color: white;
     float: left;
@@ -455,26 +454,4 @@ header {
     color: #1b47b3;
     font-size: 0.8em;
     letter-spacing: 0;
-}
-
-
-
-
-
-
-
-/* 2번째 페이지 - 검색 페이지 스타일(css) */
-
-.searchList {
-    max-width: 800px;
-    width: 80%;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #1b47b3;
-    margin-left: auto;
-    margin-right: auto;
-}
-.searchResult {
-    border-bottom: 1px solid #1b47b3;
-
 }
