@@ -47,6 +47,7 @@ header {
 }
 
 #nav {
+    position: relative;
     background-color : #1b47b3 ;
     height: 105px;
     display: flex;
@@ -105,10 +106,6 @@ header {
     margin-left: 20px;
 }
 
-
-
-
-
 /* row1 시작 */
 
 .highlight{
@@ -162,12 +159,10 @@ header {
     font-size: 18px;
 }
 
-
-
-
 /* row2 시작 */
 
 .fromRow2toEnd {
+    margin-top: 100px;
     color: #555555;
 }
 
@@ -175,7 +170,7 @@ header {
     width : 80%;
     height: 838px;
     margin-top: -105px;
-    margin-bottom: 18px;
+    margin-bottom: 50px;
     padding-top: 180px;
     border: 0px;
     margin-left: auto;
@@ -252,18 +247,12 @@ header {
     margin-top: 35px;
 }
 
-
-
-
-
 /* row3 시작 */
 
 .indexImgBox {
     display: flex;
     width: 100%;
-    height: 300px;
     background-color: #1b47b3;
-    margin-left: 5px;
     margin-right: auto;
 }
 .fontLeftSide {
@@ -304,10 +293,6 @@ header {
 #articleUpFont{
     text-align: left;
 }
-
-
-
-
 
 /* row4 시작 */
 
@@ -448,12 +433,5 @@ header {
 
 .top {
     text-align: center;
-    clear: both;
     font-size: 2.5em;
-}
-#spanTop{
-    display: inline-block;
-    color: #1b47b3;
-    font-size: 0.8em;
-    letter-spacing: 0;
 }
