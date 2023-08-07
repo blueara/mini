@@ -47,6 +47,7 @@ header {
 }
 
 #nav {
+    position: relative;
     background-color : #1b47b3 ;
     height: 105px;
     display: flex;
@@ -448,12 +449,5 @@ header {
 
 .top {
     text-align: center;
-    clear: both;
     font-size: 2.5em;
-}
-#spanTop{
-    display: inline-block;
-    color: #1b47b3;
-    font-size: 0.8em;
-    letter-spacing: 0;
 }
