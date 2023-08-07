@@ -20,8 +20,9 @@ table {
     overflow: auto;
     max-width: 1000px;
     display: block;
-    height: 735px;
+    height: 600px;
     width: 100%;
+    table-layout: fixed;
 }
 
 table * {
