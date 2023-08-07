@@ -20,7 +20,7 @@ div {
     min-width: auto;
 }
 html {
-    line-height : 1.15; /*기본 행간 높이*/
+    line-height : 1.5; /*기본 행간 높이*/
     scroll-behavior: smooth;
 }
 a {
@@ -370,13 +370,13 @@ header {
     text-align: center;
     text-shadow: 1px 1px 16px black;
     font-size: 30px;
+    height: 90px;
 }
 
 .team_caption2 {
     box-sizing: border-box;
     margin-top: 50%;
 }
-
 
 .team_card3 {
     color: white;
@@ -404,6 +404,7 @@ header {
     text-align: center;
     text-shadow: 1px 1px 16px black;
     font-size: 30px;
+    height: 90px;
 }
 
 .team_caption3 {
@@ -455,26 +456,4 @@ header {
     color: #1b47b3;
     font-size: 0.8em;
     letter-spacing: 0;
-}
-
-
-
-
-
-
-
-/* 2번째 페이지 - 검색 페이지 스타일(css) */
-
-.searchList {
-    max-width: 800px;
-    width: 80%;
-    height: 40px;
-    line-height: 40px;
-    border: 1px solid #1b47b3;
-    margin-left: auto;
-    margin-right: auto;
-}
-.searchResult {
-    border-bottom: 1px solid #1b47b3;
-
 }

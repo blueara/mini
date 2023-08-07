@@ -1,6 +1,6 @@
 .imgBox {
     float: left;
-    width: 30%;
+    width: 250px;
     height: 200px;
     background-color: #fff;
     padding-right: 50px;
@@ -8,7 +8,7 @@
 }
 
 .card {
-    border: 1px solid #555555;
+    border: 2px solid #dbdbdb;
     margin-top: 60px;
     width: 800px;
     height: 300px;
@@ -18,7 +18,7 @@
 }
 
 .cardContent {
-    width: 600px;
+    width: 720px;
     height: 300px;
 }
 
