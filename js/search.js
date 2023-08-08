@@ -108,21 +108,18 @@ function createSearchList(jsonItems, query){
 //searchList div태그내 table 요소를 클릭했을때 네이버 지도 링크를 새 창에서 열어주는 핸들러
 function searchListClickHandler(event){
     let url = 'https://map.naver.com/v5/search/';
-
-    console.log(event.target);
-    console.log(event.target.nodeName);
-
+    
     //event.target이 td 요소를 클릭했는지 판별. 아닐시 핸들러 종료
     if(event.target.nodeName.toLowerCase() === 'td'){
         
         url += encodeURIComponent(event.target.parentNode.children[2].innerHTML);
         
         //좌표값이 있다면 파라미터에 더함
-        if(event.target.getAttribute('data-lat') && event.target.getAttribute('data-lng')){
-            url += '?lat=' + event.target.getAttribute('data-lat');
-            url += '&lng=' + event.target.getAttribute('data-lng');
+        if(event.target.parentNode.getAttribute('data-lat') && event.target.parentNode.getAttribute('data-lng')){
+            url += '?lat=' + event.target.parentNode.getAttribute('data-lat');
+            url += '&lng=' + event.target.parentNode.getAttribute('data-lng');
         }
-    
+
         window.open(url);
 
     } else {
