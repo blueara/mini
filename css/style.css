@@ -277,8 +277,6 @@ header {
     height: 838px;
     text-align: center;
     margin-bottom: 200px;
-    background-image: linear-gradient(to left, transparent 1%, white),
-    url(../img/imgBusiness.jpg);
 }
 .row3 img {
     float: left;
