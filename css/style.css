@@ -94,6 +94,7 @@ header {
     left: 30px;
     color: #999;
     z-index: 1;
+    cursor: pointer;
 }
 
 .anchor {
